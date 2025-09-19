@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: qris-invoice-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false  # Set this in Render dashboard
+      - key: FRONTEND_PROD_URL
+        sync: false  # Set this in Render dashboard
