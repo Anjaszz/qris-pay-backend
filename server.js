@@ -38,8 +38,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,
 })
 .then(() => {
   console.log('✅ Connected to MongoDB Atlas');
@@ -47,7 +46,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 .catch((error) => {
   console.error('❌ MongoDB connection error:', error);
-  process.exit(1);
+  console.log('⚠️  Server will continue in offline mode (no database)');
+  console.log('💡 Fix: Add your IP to MongoDB Atlas Network Access');
 });
 
 // Invoice Schema

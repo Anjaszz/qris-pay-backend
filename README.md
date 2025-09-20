@@ -34,7 +34,7 @@ cp .env.example .env
 
 Edit file `.env`:
 ```env
-MONGODB_URI=mongodb+srv://anjas_db_user:YOUR_PASSWORD@cluster0.y5osile.mongodb.net/qris_invoices?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=mongodb+srv://xxxxx
 PORT=3001
 NODE_ENV=development
 FRONTEND_URL=http://localhost:5173
